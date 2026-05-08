@@ -5,7 +5,7 @@ provider: Mercado Libre
 providerId: mercado-libre
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - E-Commerce
 - Marketplace
@@ -15,10 +15,12 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Mercado Libre. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for Mercado Libre. The marketplace REST APIs are free to use; cost is incurred via marketplace listing/sale fees, Mercado Pago transaction fees, shipping costs (Mercado Envios), and advertising spend (Mercado Ads).
+notes: Cost lever is at the commerce layer (fees and ads), not the API layer. Negotiate seller terms by country and category.
 sources:
 - https://www.mercadolibre.com/
+- https://developers.mercadolibre.com/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,38 +31,59 @@ alignedWith:
 publisherName: Mercado Libre
 serviceCategory: E-Commerce
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: Transaction Fee
+  billingFrequency: Per-Transaction
+  billingCurrency: Local (ARS, BRL, MXN, CLP, COP, USD)
   chargeCategories:
   - Usage
-  - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Mercado Libre
+  ServiceName: Mercado Libre Marketplace
   ServiceCategory: E-Commerce
   ProviderName: Mercado Libre
   PublisherName: Mercado Libre
-  InvoiceIssuerName: Mercado Libre
-  BillingCurrency: USD
+  InvoiceIssuerName: Mercado Libre (country entity)
+  BillingCurrency: Local Currency
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: marketplace_sale_fee
+  description: Commission charged on completed marketplace sales.
+  unit: percent_of_sale
   aggregation: sum
   dimensions:
-  - account
-  - resource
+  - country
+  - category
+  - listing_type
+- name: payment_processing_fee
+  description: Mercado Pago processing fee per payment.
+  unit: percent_plus_fixed
+  aggregation: sum
+  dimensions:
+  - country
+  - payment_method
+- name: shipping_fee
+  description: Mercado Envios shipping label cost.
+  unit: per_shipment
+  aggregation: sum
+  dimensions:
+  - country
+  - service_level
+- name: ads_spend
+  description: Mercado Ads (Product Ads, Brand Ads) spend.
+  unit: currency
+  aggregation: sum
+  dimensions:
+  - country
+  - campaign
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Pull seller billing reports by country entity; reconcile with Mercado Pago dashboards and Ads invoicing.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag listings by SKU and brand to attribute fees to product lines.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Tune listing type (free vs. classic vs. premium), shipping mode, and ad bidding to reduce blended take rate.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign country-level commerce owners to track fee structures and renegotiate at scale.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

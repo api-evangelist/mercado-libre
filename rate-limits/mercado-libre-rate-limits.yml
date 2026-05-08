@@ -15,21 +15,35 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Mercado Libre. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Mercado Libre applies per-app and per-user rate limits on the marketplace REST API. Public details are not exhaustive — limits depend on the resource (items, orders, search, etc.) and on the application's commercial agreement. The API returns HTTP 429 when limits are exceeded.
+notes: Specific request-per-minute thresholds are not publicly published; sellers should monitor headers and contact support for higher quotas.
 sources:
-- https://www.mercadolibre.com/
+- https://developers.mercadolibre.com/en_us/api-docs-en
+- https://developers.mercadolibre.com/en_us/best-practices
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
+- name: Default per-app
+  scope: application
+  metric: requests
   limit: see provider documentation
-  notes: Pending reconciliation.
+  notes: Per-app rate limits apply across all endpoints; not publicly documented in detail.
+- name: Per-user
+  scope: user
+  metric: requests
+  limit: see provider documentation
+  notes: Limits also apply per authenticated marketplace user/seller.
+- name: Search
+  scope: application
+  metric: requests
+  limit: see provider documentation
+  notes: Search endpoints have stricter quotas than catalog reads.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Honor 429 responses with exponential backoff and jitter; cache responses where allowed.
+- name: Webhooks
+  description: Prefer webhook notifications over polling for orders and questions to reduce request volume.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

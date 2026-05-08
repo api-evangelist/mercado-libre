@@ -3,7 +3,7 @@ url: https://raw.githubusercontent.com/api-evangelist/mercado-libre/refs/heads/m
 name: Mercado Libre
 x-type: company
 description: >-
-  Mercado Libre is the largest e-commerce marketplace in Latin America, with adjacent fintech (Mercado Pago), logistics, and ads businesses. Extensive developer APIs.
+  Mercado Libre is the largest e-commerce marketplace in Latin America with adjacent fintech (Mercado Pago), logistics (Mercado Envios), and ads businesses. The developer platform exposes REST APIs for items, orders, shipments, users, payments, and seller tooling.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - E-Commerce
@@ -11,13 +11,61 @@ tags:
   - Latin America
   - Payments
   - Mercado Pago
+  - Logistics
+  - Shipping
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: mercado-libre:platform
+    name: Mercado Libre Platform API
+    description: >-
+      Core REST API for the Mercado Libre marketplace covering items, categories, search, orders, questions, messages, users, sites, currencies, and shipping. Auth via OAuth 2.0 (authorization code).
+    humanURL: https://developers.mercadolibre.com/en_us/api-docs-en
+    baseURL: https://api.mercadolibre.com
+    tags:
+      - Marketplace
+      - Items
+      - Orders
+      - Users
+      - Search
+    properties:
+      - type: Documentation
+        url: https://developers.mercadolibre.com/en_us/api-docs-en
+      - type: Authentication
+        url: https://developers.mercadolibre.com/en_us/authentication-and-authorization
+  - aid: mercado-libre:mercado-pago
+    name: Mercado Pago API
+    description: >-
+      Mercado Pago payments REST API for checkout, payments, subscriptions, refunds, chargebacks, and merchant accounts across Latin America. OAuth 2.0 + access token authentication.
+    humanURL: https://www.mercadopago.com.ar/developers/en/reference
+    baseURL: https://api.mercadopago.com
+    tags:
+      - Payments
+      - Fintech
+      - Checkout
+      - Subscriptions
+    properties:
+      - type: Documentation
+        url: https://www.mercadopago.com.ar/developers/en/reference
+  - aid: mercado-libre:shipping
+    name: Mercado Envios API
+    description: >-
+      Mercado Envios shipping APIs covering shipment creation, tracking, labels, pickup, and logistics integrations for sellers.
+    humanURL: https://developers.mercadolibre.com/en_us/manage-shipping-mercado-envios
+    baseURL: https://api.mercadolibre.com
+    tags:
+      - Shipping
+      - Logistics
+      - Fulfillment
+    properties:
+      - type: Documentation
+        url: https://developers.mercadolibre.com/en_us/manage-shipping-mercado-envios
 common:
   - type: Website
     url: https://www.mercadolibre.com/
+  - type: DeveloperPortal
+    url: https://developers.mercadolibre.com/
   - type: Plans
     url: plans/mercado-libre-plans-pricing.yml
   - type: RateLimits

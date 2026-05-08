@@ -5,7 +5,7 @@ provider: Mercado Libre
 providerId: mercado-libre
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - E-Commerce
 - Marketplace
@@ -13,29 +13,48 @@ tags:
 - Payments
 - Mercado Pago
 - Plans
-description: Placeholder plans/pricing artifact for Mercado Libre. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Mercado Libre's marketplace API access is free for registered developers. Monetization is driven by marketplace seller fees, Mercado Pago transaction fees, and Mercado Ads. There is no per-call API fee.
+notes: API access is free; revenue is tied to seller listing fees, transaction fees, shipping, and ads.
 sources:
-- https://www.mercadolibre.com/
+- https://developers.mercadolibre.com/
+- https://www.mercadopago.com.ar/developers/en/docs/checkout-pro/additional-content/your-integrations/notifications
 plans:
-- id: mercado-libre-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: mercado-libre-developer
+  name: Developer (Marketplace API)
+  type: free
+  description: Free OAuth-based access to the Mercado Libre marketplace REST API. Sellers monetize via listing fees and commissions.
   entries:
   - label: API Access
     name: api_access
     type: flat
-    metric: varies
+    metric: requests
     limit: -1
     timeFrame: usage
-    geo: global
+    geo: latin-america
     unit: 1
-    price: see https://www.mercadolibre.com/
+    price: 0
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: Items, Orders, Search, Users, Questions, Messages
+  - name: OAuth 2.0 authorization code flow
+- id: mercado-pago
+  name: Mercado Pago (Transactional)
+  type: usage
+  description: Mercado Pago charges per transaction (varies by country, payment method, and product). API access is free; transaction fees apply on settlement.
+  entries:
+  - label: Transaction Fee
+    name: transaction_fee
+    type: percentage
+    metric: transaction
+    limit: -1
+    timeFrame: per-transaction
+    geo: latin-america
+    unit: 1
+    price: see https://www.mercadopago.com.ar/costs-section
+    userMultiplied: false
+  elements:
+  - name: Country-specific rates (AR, BR, MX, CL, CO, etc.)
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
