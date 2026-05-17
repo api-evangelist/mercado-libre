@@ -1,7 +1,7 @@
 aid: mercado-libre
 url: https://raw.githubusercontent.com/api-evangelist/mercado-libre/refs/heads/main/apis.yml
 name: Mercado Libre
-x-type: company
+kind: company
 description: >-
   Mercado Libre is the largest e-commerce marketplace in Latin America with adjacent fintech (Mercado Pago), logistics (Mercado Envios), and ads businesses. The developer platform exposes REST APIs for items, orders, shipments, users, payments, and seller tooling.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
