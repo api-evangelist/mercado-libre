@@ -62,6 +62,10 @@ apis:
       - type: Documentation
         url: https://developers.mercadolibre.com/en_us/manage-shipping-mercado-envios
 common:
+  - type: GitHubOrganization
+    url: https://github.com/mercadolibre
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/mercadolibre
   - type: Website
     url: https://www.mercadolibre.com/
   - type: DeveloperPortal
