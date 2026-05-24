@@ -76,6 +76,8 @@ common:
     url: rate-limits/mercado-libre-rate-limits.yml
   - type: FinOps
     url: finops/mercado-libre-finops.yml
+  - type: LLMsTxt
+    url: https://developers.mercadolibre.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
