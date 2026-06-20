@@ -4,7 +4,7 @@ name: Mercado Libre
 kind: company
 description: >-
   Mercado Libre is the largest e-commerce marketplace in Latin America with adjacent fintech (Mercado Pago), logistics (Mercado Envios), and ads businesses. The developer platform exposes REST APIs for items, orders, shipments, users, payments, and seller tooling.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - E-Commerce
   - Marketplace
