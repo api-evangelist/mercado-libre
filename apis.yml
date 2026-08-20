@@ -37,6 +37,12 @@ apis:
     baseURL: https://api.mercadolibre.com
     tags:
       - Marketplace
+      - Item
+      - Order
+      - User
+      - Search
+    tags_raw:
+      - Marketplace
       - Items
       - Orders
       - Users
@@ -53,6 +59,11 @@ apis:
     humanURL: https://www.mercadopago.com.ar/developers/en/reference
     baseURL: https://api.mercadopago.com
     tags:
+      - Payments
+      - Fintech
+      - Checkout
+      - Subscription
+    tags_raw:
       - Payments
       - Fintech
       - Checkout
