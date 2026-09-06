@@ -96,6 +96,8 @@ apis:
       - type: Documentation
         url: https://developers.mercadolibre.com/en_us/manage-shipping-mercado-envios
 common:
+  - type: PublicAPIsListing
+    url: https://github.com/public-apis/public-apis
   - type: DomainSecurity
     url: security/mercado-libre-domain-security.yml
   - type: GitHubOrganization
