@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/mercado-libre/integrations
+- https://n8n.io/integrations/mercado-libre/
+- https://composio.dev/toolkits/mercado-libre
+- https://monid.ai/tools/mercado-libre
+checked:
+- https://composio.dev/toolkits/mercado-libre
+- https://monid.ai/tools/mercado-libre
+- https://n8n.io/integrations/mercado-libre/
+- https://zapier.com/apps/mercado-libre/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
