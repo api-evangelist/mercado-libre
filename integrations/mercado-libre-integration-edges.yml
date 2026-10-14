@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/mercado-libre/integrations
 - https://n8n.io/integrations/mercado-libre/
@@ -9,8 +9,32 @@ checked:
 - https://composio.dev/toolkits/mercado-libre
 - https://monid.ai/tools/mercado-libre
 - https://n8n.io/integrations/mercado-libre/
+- https://storage.googleapis.com/tcfac/additional-consent-providers.csv
 - https://zapier.com/apps/mercado-libre/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: Google Ad Tech Providers
+  partner: null
+  partner_match: domain+verified
+  type: contract
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://storage.googleapis.com/tcfac/additional-consent-providers.csv
+  contract_reference:
+    register: Google Ad Tech Providers (Additional Consent)
+    spec_file: null
+    role: google-atp
+    registered_name: Mercado Livre
+    register_id: '33931'
+    products:
+    - Mercado Livre
+    matched_domain: mercadolibre.com
+    api_families: null
+    api_families_basis: null
+    detected_by: sweep-adtech.py
+    detected: '2026-10-14'
+  detected_by: sweep-adtech.py
+  detected: '2026-10-14'
 templates: []
