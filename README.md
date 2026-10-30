@@ -1,4 +1,4 @@
-# Mercado Libre (mercado-libre)
+# Mercado Libre
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,42 +66,102 @@
 
 Mercado Libre is the largest e-commerce marketplace in Latin America with adjacent fintech (Mercado Pago), logistics (Mercado Envios), and ads businesses. The developer platform exposes REST APIs for items, orders, shipments, users, payments, and seller tooling.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/mercado-libre/refs/heads/main/apis.yml)
+**Areas:** E-Commerce · Marketplace · Latin America · Payments · Mercado Pago · Logistics · Shipping
 
-## Type
-- **x-type:** company
+## Mercado Libre on APIs.io
 
-## Tags
-- E-Commerce, Marketplace, Latin America, Payments, Mercado Pago, Logistics, Shipping
+Everything profiled for Mercado Libre is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mercado-libre/](https://apis.io/providers/mercado-libre/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+### APIs (3)
 
-## APIs
+- [Mercado Libre Platform API](https://apis.io/apis/mercado-libre/platform/) — Core REST API for the Mercado Libre marketplace covering items, categories, search, orders, questions, messages, users, sites, currencies, and shipping.…
+- [Mercado Pago API](https://apis.io/apis/mercado-libre/mercado-pago/) — Mercado Pago payments REST API for checkout, payments, subscriptions, refunds, chargebacks, and merchant accounts across Latin America. OAuth 2.0 + access…
+- [Mercado Envios API](https://apis.io/apis/mercado-libre/shipping/) — Mercado Envios shipping APIs covering shipment creation, tracking, labels, pickup, and logistics integrations for sellers.
 
-### Mercado Libre Platform API
-Core REST API covering items, categories, search, orders, questions, messages, users, sites, currencies, and shipping. OAuth 2.0 (authorization code).
-- **Base URL:** `https://api.mercadolibre.com`
-- **Docs:** https://developers.mercadolibre.com/en_us/api-docs-en
+### Published properties
 
-### Mercado Pago API
-Mercado Pago payments REST API for checkout, payments, subscriptions, refunds, chargebacks, and merchant accounts across LATAM.
-- **Base URL:** `https://api.mercadopago.com`
-- **Docs:** https://www.mercadopago.com.ar/developers/en/reference
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Mercado Envios API
-Mercado Envios shipping API: shipment creation, tracking, labels, pickup, and logistics integrations.
-- **Docs:** https://developers.mercadolibre.com/en_us/manage-shipping-mercado-envios
+#### Security (1)
 
-## Common Properties
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Mercado Libre Domain Security](https://apis.io/security/mercado-libre/mercado-libre-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Mercado Libre Plans Pricing](https://apis.io/plans/mercado-libre/mercado-libre-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Mercado Libre Rate Limits](https://apis.io/rate-limits/mercado-libre/mercado-libre-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Mercado Libre Finops](https://apis.io/finops/mercado-libre/mercado-libre-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.mercadolibre.com/)
-- [Developer Portal](https://developers.mercadolibre.com/)
-- [Plans](plans/mercado-libre-plans-pricing.yml) — reconciled (free API; commerce-layer fees)
-- [RateLimits](rate-limits/mercado-libre-rate-limits.yml) — partial (specific RPS not public)
-- [FinOps](finops/mercado-libre-finops.yml) — reconciled (FOCUS-aligned)
+- [GitHub](https://github.com/mercadolibre)
 
-## Maintainers
-**FN:** Kin Lane
+## API Evangelist rating
 
-**Email:** kin@apievangelist.com
+**Kin Score 13.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 5.3 |
+
+**Agent readiness 3.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.7** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mercado-libre/](https://apis.io/providers/mercado-libre/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mercado Libre: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mercado-libre/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
